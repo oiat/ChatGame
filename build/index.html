@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Game</title>
+  <script src="resource/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Tried to make the structure similar to the other games -->
+  <div class="background">
+    <div class="intro-wrapper">
+      <div class="intro">
+        <div class="intro-header">
+          <h1></h1>
+        </div>
+        <div class="intro-body">
+          <div class="intro-banner">
+            <img>
+          </div>
+          <div class="intro-text">
+            <p></p>
+          </div>
+        </div>
+        <div class="intro-button">
+          <button class="startbtn" id="startbtn"></button>
+        </div>
+      </div>
+    </div>
+    <div class="game-wrapper">
+      <div class="phone-screen">
+        <div class="header">
+          <!-- Top Bar (Profile, Call Icon etc)  -->
+          <div class="profile">
+            <img draggable="false" src="c_profile.png" alt="Profile">
+            <span>Unbekannt</span>
+          </div>
+          <div id="score-counter">
+            <span id="scoreValue">0</span>
+          </div>
+          <div class="icons">
+            <img draggable="false" src="c_icon1.png" alt="Call">
+            <img draggable="false" src="c_icon2.png" alt="more">
+          </div>
+        </div>
+        <div class="chat-list">
+          <!-- Chat box -->
+        </div>
+        <div class="choice-area">
+          <!-- Answer Box -->
+        </div>
+      </div>
+    </div>
+    <div class="banner-wrapper">
+      <img class="banner" src="c_banner-rectangle_1.png">
+    </div>
+  </div>
+  <audio autoplay muted loop preload="auto" id="backgroundmusic">
+    <source src=".\sound_music_1.mp3" type="audio/mpeg">
+  </audio>
+  <div class="splashscreen" id="splashscreen">
+    <div class="loader"></div>
+  </div>
+  <script src="logic.js"></script>
+</body>
+
+</html>

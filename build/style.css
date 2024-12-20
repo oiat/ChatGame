@@ -1,0 +1,353 @@
+@charset "utf-8";
+@import url("/resource/css/fonts.css");
+/* CSS Variables */
+:root {
+  --main-color: rgba(79, 171, 247, 0.75);
+  --accent-color:rgba(255,255,255,1);
+  --text-color: #000000;
+  --text-color2: #fff;
+  --feedback-true: rgb(0, 120, 0);
+  --feedback-false: rgba(255, 0, 0, 1);
+  --timer: 5000ms;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  background-image: url("./c_background_1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: large;
+  color: var(--text-color);
+  overflow:hidden;
+}
+img {
+  max-width: 100%;
+}
+div.splashscreen {
+  background-color: black;
+  background-image: url("./c_splash_1.png");
+  background-repeat: no-repeat;
+  height: 100vh;
+  height: 100dvh;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  width: 100dvw;
+  z-index: 999;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  top: 80%;
+}
+.loader:after {
+  content: " ";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: ringloader 1.2s linear infinite;
+}
+@keyframes ringloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+div.background{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
+}
+div.intro-wrapper {
+  display: flex;
+  min-width: 350px;
+  margin: 5px;
+  max-width: 800px;
+  z-index: 10;
+  background: var(--main-color);
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+.intro {
+  margin: 25px;
+  width: 100%;
+  z-index: 10;
+}
+div.banner-wrapper{
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  max-width: 205px;
+  border: solid white 3px;
+}
+div.banner-wrapper img{
+  vertical-align: middle;
+}
+.startbtn {
+  font-weight: bold;
+  font-size: large;
+  line-height: 1;
+  vertical-align: middle;
+  border-radius: 15px;
+  border: none;
+  min-height: 39px;
+  color: var(--main-color);
+  background-color: var(--text-color);
+  margin: 15px;
+  min-width: 45%;
+  max-width: 100%;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding: 10px;
+  min-height: 75px;
+}
+.game-wrapper {
+  display: flex;
+  min-width: 350px;
+  margin: 5px;
+  max-width: 800px;
+  z-index: 10;
+  background: var(--main-color);
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  height: 90dvh;
+  max-height: 90dvh;
+  box-sizing: border-box;
+  padding:15px;
+  overflow: hidden;
+}
+.game-wrapper .phone-screen{
+  display: flex;
+  text-align: center;
+  justify-content: stretch;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 800px) {
+  .game-wrapper{
+    padding: 0;
+    border-radius: 0;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+  }
+  .game-wrapper .phone-screen{
+    border-radius: 0;
+  }
+}
+.header {
+  /* Top Bar */
+  background-color: var(--accent-color);
+  color: var(--text-color2);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.header > *{
+  flex-basis:40%;
+}
+.header #score-counter{
+  max-width: 50px;
+}
+.header .profile {
+  display: flex;
+  align-items: center;
+}
+.header .profile img {
+  /* Contact Profile picture*/
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.header .profile span {
+  font-weight: bold;
+}
+.header .icons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.header .icons img {
+  /* Icons for Call & Options */
+  width: 24px;
+  height: 24px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.chat-list {
+  background-color: transparent;
+  background-image: url("c_chatbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+  box-sizing: border-box;
+  flex-grow:1;
+  display:grid;
+  grid-template-columns: 1fr;
+  align-content: safe start;
+  justify-content: start;
+  grid-gap: 10px;
+  padding: 10px;
+}
+.chat-list .message {
+  margin-bottom: 15px;
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: medium;
+  line-height: 1.4;
+  position: relative;
+  height: fit-content;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+.chat-list .message img{
+  width:100%;
+  max-width: 100%;
+  display:inline-block;
+}
+.chat-list .message video{
+  width:100%;
+  max-width: 100%;
+  display:inline-block;
+}
+.chat-list .message.sent {
+  /* Answers we give are shown on the right*/
+  background-color: var(--accent-color);
+  color: var(--text-color2);
+  justify-self: end;
+  border-radius: 15px 15px 0 15px;
+}
+.chat-list .message.received {
+  /* Messages that stay on the left*/
+  background-color: var(--main-color);
+  color:var(--text-color);
+  justify-self: start;
+  border-radius: 0 15px 15px 15px;
+}
+.chat-list .message.sent.true:after {
+  content:var(--feedback-true);
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  display: block;
+  font-size: large;
+}
+.chat-list .message.sent.false:after {
+  content:var(--feedback-false);
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  display: block;
+  font-size: large;
+}
+.choice-area {
+  /* Answer Area*/
+  border-top: 1px solid var(--accent-color);
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+  max-height: 25%;
+  height: 25%;
+  min-height: 25%;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+  align-items: center;
+  align-content:center;
+}
+.choice-area .choice {
+  /* Answer Buttons - Tried making it a 2 x 2 Grid*/
+  background-color: var(--accent-color);
+  color: var(--text-color2);
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: large;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  border: 1px solid var(--accent-color);
+  flex-basis: 40%;
+  flex-grow: 1;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.choice-area .choice div{
+  margin:5px 10px;
+  text-align: center;
+}
+.choice-area .choice img{
+  border-radius: 5%;
+}
+.choice-area .choice.clicked{
+  animation: buttonclick 100ms ease-in-out 0s 2 alternate;
+  background:rgba(0,0,0,0.275);
+  transform:scale(1.05);
+}
+.choice-area .choice:hover{
+  background-color: var(--main-color);
+  color:var(--text-color);
+}
+.choice-area .choice img{
+  max-width:110px;
+}
+
+@keyframes buttonclick{
+  from{}
+  to{
+    transform: scale(0.95);
+  }
+}
