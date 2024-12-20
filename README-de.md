@@ -1,4 +1,7 @@
 # Chat Game
+
+[Englische Version](README-de.md)
+
 ## Einführung
 
 Generative KI boomt und mit ihr die Erstellung von Fakes und Deep Fakes. Gleichzeitig fehlt es an kurzweiligen und leicht in der Schule einsetzbaren Übungen zum Thema Deep Fake-Erkennung. Hier setzt das Projekt Fight Fakes an, bei dem eine Spielumgebung entwickelt wurde, in der Jugendliche spielerisch lernen können, Informationen schnell und intuitiv zu bewerten. 
