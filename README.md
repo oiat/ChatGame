@@ -1,4 +1,7 @@
 # Chat Game
+
+[German Version](README-de.md)
+
 ## Introduction
 
 Generative AI is booming, and so is the creation of fakes and deep fakes. At the same time, there is a lack of fun and easy-to-use deep fake detection exercises in schools. This is where Fight Fakes comes in, developing a game environment where young people can playfully learn to evaluate information quickly and intuitively. 
